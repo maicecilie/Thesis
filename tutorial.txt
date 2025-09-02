@@ -1,1 +1,0 @@
-wget https://lab.compute.dtu.dk/patmjen/hpc_tutorials/-/raw/main/scripts/init-sh

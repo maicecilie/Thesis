@@ -14,10 +14,14 @@
 #BSUB -M 5GB
 ### -- set walltime limit: hh:mm -- 
 #BSUB -W 24:00 
-### -- Send notifications to your email --
-#BSUB -u s185394@dtu.dk
-#BSUB -B   # send notification at job start
-#BSUB -N   # send notification at job completion
+### -- set the email address -- 
+# please uncomment the following line and put in your e-mail address,
+# if you want to receive e-mail notifications on a non-default address
+##BSUB -u s185394@dtu.dk
+### -- send notification at start -- 
+#BSUB -B 
+### -- send notification at completion -- 
+#BSUB -N 
 ### -- Specify the output and error file. %J is the job-id -- 
 ### -- -o and -e mean append, -oo and -eo mean overwrite -- 
 #BSUB -o Output_%J.out 
@@ -27,5 +31,4 @@
 source init.sh
 
 # here follow the commands you want to execute with input.in as the input file
-python3 -u resnet_tutorial.py input.in | tee output.out
-
+python3 resnet_tutorial.py input.in > output.out

@@ -14,3 +14,4 @@ Loaded module: matplotlib/3.8.4-numpy-1.26.4-python-3.11.9
 Loaded module: pandas/2.2.2-python-3.11.9
 Loaded module: cuda/11.8
 Loaded module: cudnn/v9.8.0.87-prod-cuda-11.X
+User defined signal 2

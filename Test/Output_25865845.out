@@ -1,0 +1,11 @@
+Script started!
+Python version: 3.11.9 (main, May 16 2024, 07:14:35) [GCC 12.3.0]
+Epoch [1/20], Loss: 1.8908
+Accuracy of the network on the 5000 validation images: 58.62 %
+Epoch [2/20], Loss: 1.3716
+Accuracy of the network on the 5000 validation images: 72.38 %
+Epoch [3/20], Loss: 1.7557
+Accuracy of the network on the 5000 validation images: 76.38 %
+Epoch [4/20], Loss: 2.9995
+Accuracy of the network on the 5000 validation images: 80.12 %
+Epoch [5/20], Loss: 0.4934
