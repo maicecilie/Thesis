@@ -1,0 +1,24 @@
+Loaded dependency [python3/3.11.9]: sqlite3/3.45.3
+Loaded dependency [python3/3.11.9]: gcc/12.3.0-binutils-2.40
+Loaded module: python3/3.11.9
+
+Loading python3/3.11.9
+  Loading requirement: sqlite3/3.45.3 gcc/12.3.0-binutils-2.40
+Loaded dependency [numpy/1.26.4-python-3.11.9-openblas-0.3.27]: openblas/0.3.27
+Loaded module: numpy/1.26.4-python-3.11.9-openblas-0.3.27
+
+Loading numpy/1.26.4-python-3.11.9-openblas-0.3.27
+  Loading requirement: openblas/0.3.27
+Loaded module: scipy/1.13.0-python-3.11.9
+Loaded module: matplotlib/3.8.4-numpy-1.26.4-python-3.11.9
+Loaded module: pandas/2.2.2-python-3.11.9
+Loaded module: cuda/11.8
+Loaded module: cudnn/v9.8.0.87-prod-cuda-11.X
+Traceback (most recent call last):
+  File "/zhome/e3/5/138889/Thesis/Harvard-GF/Harvard-GF-Baseline.py", line 33, in <module>
+    train_dataset = RNFLT_Dataset_Pred_Tds(TRAIN_PATH, subset='train', modality_type=MODALITY)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/zhome/e3/5/138889/Thesis/Harvard-GF/datasets.py", line 11, in __init__
+    self.file_list = sorted(os.listdir(data_path))
+                            ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/zhome/e3/5/138889/Thesis/Harvard-GF/dataset/Training'
