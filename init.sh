@@ -34,7 +34,7 @@ source "${VENV_DIR}/${VENV_NAME}/bin/activate"
 # Only install if missing
 pip install --upgrade pip
 
-REQUIRED_PACKAGES=("torch" "scikit-learn" "mpi4py" "blobfile")
+REQUIRED_PACKAGES=("torch" "scikit-learn" "mpi4py" "blobfile" "statsmodels")
 for pkg in "${REQUIRED_PACKAGES[@]}"; do
     if ! python -c "import ${pkg%%=*}" &> /dev/null; then
         echo "Installing $pkg..."
