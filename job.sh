@@ -1,7 +1,7 @@
 #!/bin/sh
 ### General options 
 ### -- specify queue -- 
-#BSUB -q gpuv100i        # GPU queue
+#BSUB -q gpuv100       # GPU queue
 
 #BSUB -gpu "num=1:mode=exclusive_process"  # request 1 GPU
 
