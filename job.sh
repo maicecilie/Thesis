@@ -5,13 +5,11 @@
 ### -- set the job Name -- 
 #BSUB -J TestPython
 ### -- ask for number of cores (default: 1) -- 
-#BSUB -n 4 
+#BSUB -n 6 
 ### -- specify that the cores must be on the same host -- 
 #BSUB -R "span[hosts=1]"
-### -- specify that we need 4GB of memory per core/slot -- 
-#BSUB -R "rusage[mem=4GB]"
-### -- specify that we want the job to get killed if it exceeds 5 GB per core/slot -- 
-#BSUB -M 5GB
+### -- specify that we need xGB of memory per core/slot -- 
+#BSUB -R "rusage[mem=8GB]"
 ### -- set walltime limit: hh:mm -- 
 #BSUB -W 24:00 
 ### -- set the email address -- 
@@ -30,5 +28,8 @@
 # Initialize Python environment
 source init.sh
 
-# here follow the commands you want to execute with input.in as the input file
-python3 resnet_tutorial.py input.in > output.out
+# Change to Harvard-GF folder
+cd Harvard-GF
+
+# Run Harvard-GF-Baseline.py
+python3 Harvard-GF-Baseline.py > output.out
