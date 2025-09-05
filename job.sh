@@ -11,7 +11,7 @@
 ### -- specify that we need xGB of memory per core/slot -- 
 #BSUB -R "rusage[mem=8GB]"
 ### -- set walltime limit: hh:mm -- 
-#BSUB -W 3-00:00
+#BSUB -W 72:00
 ### -- set the email address -- 
 # please uncomment the following line and put in your e-mail address,
 # if you want to receive e-mail notifications on a non-default address
