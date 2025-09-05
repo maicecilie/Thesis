@@ -11,7 +11,7 @@
 ### -- specify that we need xGB of memory per core/slot -- 
 #BSUB -R "rusage[mem=8GB]"
 ### -- set walltime limit: hh:mm -- 
-#BSUB -W 24:00 
+#BSUB -W 62:00 
 ### -- set the email address -- 
 # please uncomment the following line and put in your e-mail address,
 # if you want to receive e-mail notifications on a non-default address
@@ -29,7 +29,8 @@
 source init.sh
 
 # Change to Harvard-GF folder
-cd Harvard-GF-Repo/scripts
+/work3/s185394/Thesis/Thesis-Repo/Harvard-GF-Repo/scripts/train_glaucoma_fair.sh
 
-# Run Harvard-GF-Baseline.py
-python3 train_glaucoma_fair.sh > output.out
+# Run script
+./train_glaucoma_fair.sh
+
