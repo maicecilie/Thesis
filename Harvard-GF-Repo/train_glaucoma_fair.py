@@ -268,8 +268,8 @@ if __name__ == '__main__':
     with open(os.path.join(args.result_dir, f'args_train.txt'), 'w') as f:
         json.dump(args.__dict__, f, indent=2)
 
-    trn_dataset = EyeFair(os.path.join(args.data_dir, 'train'), modality_type=args.modality_types, task=args.task, resolution=args.image_size, attribute_type=args.attribute_type)
-    tst_dataset = EyeFair(os.path.join(args.data_dir, 'test'), modality_type=args.modality_types, task=args.task, resolution=args.image_size, attribute_type=args.attribute_type)
+    trn_dataset = EyeFair(os.path.join(args.data_dir, 'Training'), modality_type=args.modality_types, task=args.task, resolution=args.image_size, attribute_type=args.attribute_type)
+    tst_dataset = EyeFair(os.path.join(args.data_dir, 'Test'), modality_type=args.modality_types, task=args.task, resolution=args.image_size, attribute_type=args.attribute_type)
 
     logger.log(f'trn patients {len(trn_dataset)} with {len(trn_dataset)} samples, val patients {len(tst_dataset)} with {len(tst_dataset)} samples')
 

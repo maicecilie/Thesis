@@ -29,7 +29,7 @@
 source init.sh
 
 # Change to Harvard-GF folder
-cd Harvard-GF
+cd Harvard-GF-Repo/scripts
 
 # Run Harvard-GF-Baseline.py
-python3 Harvard-GF-Baseline.py > output.out
+python3 train_glaucoma_fair.sh > output.out
