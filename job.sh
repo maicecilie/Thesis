@@ -1,36 +1,48 @@
-#!/bin/sh 
+#!/bin/sh
 ### General options 
 ### -- specify queue -- 
 #BSUB -q hpc
+
 ### -- set the job Name -- 
-#BSUB -J TestPython
-### -- ask for number of cores (default: 1) -- 
+#BSUB -J TrainGlaucoma
+
+### -- ask for number of cores -- 
 #BSUB -n 6 
+
 ### -- specify that the cores must be on the same host -- 
 #BSUB -R "span[hosts=1]"
-### -- specify that we need xGB of memory per core/slot -- 
+
+### -- specify memory per core/slot -- 
 #BSUB -R "rusage[mem=8GB]"
-### -- set walltime limit: hh:mm -- 
+
+### -- set walltime limit hh:mm -- 3 days = 72:00
 #BSUB -W 72:00
-### -- set the email address -- 
-# please uncomment the following line and put in your e-mail address,
-# if you want to receive e-mail notifications on a non-default address
-##BSUB -u s185394@dtu.dk
-### -- send notification at start -- 
+
+### -- send notification at start and end -- 
 #BSUB -B 
-### -- send notification at completion -- 
 #BSUB -N 
-### -- Specify the output and error file. %J is the job-id -- 
-### -- -o and -e mean append, -oo and -eo mean overwrite -- 
+
+### -- Specify the output and error files. %J is job id -- 
 #BSUB -o Output_%J.out 
 #BSUB -e Output_%J.err 
 
-# Initialize Python environment
+# Load Python environment
 source init.sh
 
-# Change to Harvard-GF folder
+# Go to the folder containing the Python training script
 cd /work3/s185394/Thesis/Thesis-Repo/Harvard-GF-Repo
 
-# Run script
-./train_glaucoma_fair.sh
-
+# Run the Python training script with your parameters
+python3 train_glaucoma_fair.py \
+    --data_dir /work3/s185394/Thesis/data/EyeFair \
+    --result_dir ./results/crosssectional_rnflt_race/fullysup_efficientnet_rnflt_Taskcls_lr5e-5_bz6 \
+    --model_type efficientnet \
+    --image_size 200 \
+    --loss_type bce \
+    --lr 5e-5 --weight-decay 0. --momentum 0.1 \
+    --batch-size 6 \
+    --task cls \
+    --epochs 10 \
+    --modality_types rnflt \
+    --perf_file efficientnet_rnflt_race.csv \
+    --attribute_type race
