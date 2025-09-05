@@ -1,7 +1,9 @@
 #!/bin/sh
 ### General options 
 ### -- specify queue -- 
-#BSUB -q hpc
+#BSUB -q gpuv100i        # GPU queue
+
+#BSUB -gpu "num=1:mode=exclusive_process"  # request 1 GPU
 
 ### -- set the job Name -- 
 #BSUB -J TrainGlaucoma
@@ -25,6 +27,11 @@
 ### -- Specify the output and error files. %J is job id -- 
 #BSUB -o Output_%J.out 
 #BSUB -e Output_%J.err 
+
+# Prefer 32GB or NVLINK GPUs
+# If none available, it falls back to standard GPUs
+# (LSF will pick one that satisfies the resource)
+#BSUB -R "select[gpu32gb || sxm2]"
 
 # Load Python environment
 source init.sh
